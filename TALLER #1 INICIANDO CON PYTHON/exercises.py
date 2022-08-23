@@ -110,8 +110,25 @@ while exit == 2:
         peso = float(input("Ingrese su peso en Kg: "))
         est = float(input("Ingrese su estatura en Mts: "))
         imc = peso / (est ** 2)
+        
+        if imc <= 15:
+            rango = "Delgadez Extrema"
+        elif imc > 15 and imc <= 15.9:
+            rango = "Delgadez Severa"
+        elif imc >= 16 and imc <= 18.4:
+            rango = "Delgadez"
+        elif imc >= 18.5 and imc <= 24.9:
+            rango = "Peso Saludable"
+        elif imc >= 25 and imc <= 29.9:
+            rango = "Sobrepeso"
+        elif imc >= 30 and imc <= 34.9:
+            rango = "Obesidad Moderada"
+        elif imc >= 35 and imc <= 39.9:
+            rango = "Obesidad Severa"
+        elif imc >= 40:
+            rango = "Obesidad Extrema"
 
-        print(f"\nSu Índice de Masa Corporal es {imc}")
+        print(f"\nSu Índice de Masa Corporal es {imc}. Su rango es {rango}.")
         
     elif option == 10:
         print("\nCONVERTIDOR DE TEMPERATURA\n")
@@ -120,8 +137,8 @@ while exit == 2:
         kelvin = celsius + 273.15
 
         print("\nLa temperatura ingresada equivale a: \n"
-            ,fahren, " en Fahrenheit\n"
-            ,kelvin, " en Kelvin")
+        ,fahren, "en Fahrenheit\n"
+        ,kelvin, "en Kelvin")
     
     while exit != 1 or exit != 2:
         exit = int(input(msj_question))
